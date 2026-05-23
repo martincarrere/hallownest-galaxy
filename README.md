@@ -11,11 +11,22 @@ Independent research, just exploring.
 
 ---
 
+A good expedition does not always end with a slain god or a shattered seal.
+
+Some days, the Knight simply maps a forgotten boundary deeper than before.
+Some days, a dangerous assumption is uncovered beneath the dust.
+Some days, a single line is carved into the lore tablets for those who wander later.
+And sometimes, hidden in the dark between them all, a new path opens.
+
+---
+
 ## How to play
 
 Hallownest is a dead kingdom. You explore it alone, with no map given upfront.
 
 The Knight carries a nail and nothing else. You read what's carved on the walls, you fight what lives in the dark, and you write down what you find.
+
+Not every breach begins with a new vulnerability. Sometimes the kingdom simply leaves its gates unguarded long enough for old flaws to become exploitable.
 
 **`journals/`** — The Hunter's Journal. One entry per finding: what it is, how it works, what it proves. Full writeups with PoC and impact.
 
@@ -70,4 +81,6 @@ Some entries are wounds. Some are just the architecture. Both go in the journal.
 
 | ID | Title | CWE | Severity | Reported | Status |
 |---|---|---|---|---|---|
-| [HG-2026-001](journals/HG-2026-001-path-traversal-default-id-secret/) | Unauthenticated arbitrary file read via path traversal and default `id_secret` | 22, 1188 | High | 2026-03-06| Reported |
+| [HG-2026-001](journals/HG-2026-001-path-traversal-default-id-secret.md) | Arbitrary file read via path traversal and forgeable job_key | 22, 1188 | High | 2026-03-06| Reported |
+| [HG-2026-002](journals/HG-2026-002-zip-sticky-bit.md) | Zip archive-to-directory converter preserves SUID/sticky bit | 732 | Medium | 2026-05-23 | Reported |
+

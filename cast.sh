@@ -5,8 +5,16 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 set -a; source "$REPO_DIR/.env"; set +a
 
-SPELL="${1:?usage: ./cast.sh spells/<spell>.py}"
+SPELL="${1:?usage: ./cast.sh spells/<spell>}"
 SPELL_NAME="$(basename "$SPELL")"
+
+if [[ "$SPELL_NAME" == *.sh ]]; then
+    echo "[*] Casting shell spell $SPELL_NAME..."
+    bash "$REPO_DIR/$SPELL"
+    echo "[*] Done"
+    exit 0
+fi
+
 GALAXY_ROOT="$(dirname "${GALAXY_SOURCE%/}")"
 VENV="$GALAXY_ROOT/.venv/bin/activate"
 

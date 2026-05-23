@@ -13,6 +13,8 @@ galaxy.yml and the id_secret configuration value defaults to the static, publicl
 
 **In summary we can combined this two attacks these two vulnerablities:**
 
+**Precondition**: the target instance must be running the default `id_secret`. On instances where a custom secret is configured, Vulnerability 1 still exists but exploiting it requires independent knowledge of the secret, which is not demonstrated in this report.
+
 On any Galaxy installation where id_secret has never been explicitly set:
 
   1. Attacker self-registers a standard Galaxy account (no admin access needed)
@@ -82,9 +84,10 @@ Full script: [spells/HG-2026-001-path-traversal-default-id-secret.py](../spells/
 
 ### Impact
 
-- Turns Vulnerability 1 into a fully unauthenticated remote exploit
-- Affects all installations that have never explicitly set `id_secret`
-- Default is publicly documented — no bruteforce required
+- On instances running the default `id_secret`: turns Vulnerability 1 into a fully unauthenticated remote exploit with no credentials required
+- Affects misconfigured installations that have never explicitly set `id_secret`
+- Default is publicly documented, no bruteforce required
+- Where a custom secret is in use, Vulnerability 1 remains present but `id_secret` recovery is out of scope for this report
 
 ### Remediation
 

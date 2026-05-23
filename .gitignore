@@ -1,4 +1,5 @@
-./path-of-pains
+path-of-pains/*
+spells/artefacts/*
 ./lore
 ./charms
 .env
